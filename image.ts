@@ -1,8 +1,4 @@
 import { configs, enums } from '@/itm-constants';
-<<<<<<< HEAD
-import sharp from 'sharp';
-=======
->>>>>>> b8ba817 (Update)
 
 const toBase64 = async ({ image }: { image: File }) => {
 	try {
@@ -78,22 +74,12 @@ const convertType = async ({
 	}
 };
 
-<<<<<<< HEAD
-const toWebP = async ({ image }: { image: File }): Promise<File | null> => {
-	const isNode = typeof process !== 'undefined' && process.versions !== null && process.versions.node !== null;
-
-	if (isNode) {
-		return (await sharp(image as any)
-			.webp()
-			.toBuffer()) as any;
-=======
 const toWebP = async ({ image }: { image: any }) => {
 	const isNode = typeof process !== 'undefined' && process.versions !== null && process.versions.node !== null;
 
 	if (isNode) {
 		const sharp = (await import('sharp')).default;
 		return (await sharp(image).webp().toBuffer()) as any;
->>>>>>> b8ba817 (Update)
 	} else {
 		return await convertType({ image });
 	}
