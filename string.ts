@@ -134,7 +134,11 @@ const addBaseUrlForImageSrc = ({ content = '', baseUrl = '' }) => {
 	const regex = /<img\s+[^>]*src=(["'])(.*?)\1[^>]*>/g;
 
 	// Replace each <img> tag in the content.
+<<<<<<< HEAD
 	return content.replace(regex, (match, quote, src) => {
+=======
+	return content.replace(regex, (match, _, src) => {
+>>>>>>> b8ba817 (Update)
 		// Check if the src is an external link (starts with http or https).
 		const isExternalLink = /^(http|https):\/\//.test(src);
 
