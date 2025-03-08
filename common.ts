@@ -38,7 +38,6 @@ const sort = ({
 	switch (type) {
 		case 'string':
 			return sortString({ a: a as string, b: b as string });
-
 		case 'number':
 			return sortNumber({ a: a as number, b: b as number });
 		case 'dateString':
